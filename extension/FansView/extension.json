@@ -1,0 +1,9 @@
+{
+	"id": "FansView",
+	"version": "1.0.0",
+	"name": "番数显示",
+	"author": "88826",
+	"description": "显示手牌番数，不包括宝牌",
+	"preview": "preview.jpg",
+	"entry": "script.js"
+}

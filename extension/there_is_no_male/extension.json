@@ -1,0 +1,9 @@
+{
+  "id": "there_is_no_male",
+  "version":"1.1.2",
+  "name": "男士止步",
+  "author": "Handle",
+  "description": "禁止所有男士上桌",
+  "entry": "script.js",
+  "preview": "preview.png"
+}

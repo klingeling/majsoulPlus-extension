@@ -1,0 +1,11 @@
+{
+  "id": "MajsoulPopWindow",
+  "version": "1.0.2",
+  "name": "实现弹出框替换",
+  "author": ["bin"],
+  "description": "替换js自带的三种弹出框,改为游戏内实现弹框,更加美观\n需要注意,修改后弹出框需要在进入游戏界面后使用",
+  "preview": "preview.png",
+  "dependencies": {},
+  "resourcepack": [],
+  "entry": "script.js"
+}

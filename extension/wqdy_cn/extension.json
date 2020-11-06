@@ -1,0 +1,18 @@
+{
+  "id": "wqdy_cn",
+  "version": "1.1.14",
+  "name": "我全都要.min.国服特供版",
+  "author": "Majsoul Plus Team",
+  "description": "本地解锁全人物，道具等。\n国服v0.6.262.w版本可用。",
+  "preview": "preview.jpg",
+  "entry": "script.js",
+  "dependencies": {},
+  "resourcepack": [],
+  "shortcut": {
+    "name": "我全都要",
+    "actions": [{
+      "name": "手动保存当前配置",
+      "execute": "window.wqdy.writeSetting()"
+    }]
+  }
+}

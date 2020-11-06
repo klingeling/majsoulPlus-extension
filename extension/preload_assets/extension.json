@@ -1,0 +1,8 @@
+{
+  "id": "preload_assets",
+  "version": "1.0.0",
+  "name": "预加载静态资源",
+  "author": "某昨P",
+  "description": "可以在游戏开始之前预先加载所有雀魂用到的静态素材.\n由于其会大幅减慢游戏加载速度,建议运行完一次之后关闭!",
+  "loadBeforeGame": true
+}

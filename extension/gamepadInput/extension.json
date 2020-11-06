@@ -1,0 +1,7 @@
+{
+  "id": "gamepadInput",
+  "version": "1.0.0",
+  "name": "手柄操作",
+  "author": "DeQxJ00",
+  "description": "为了正常使用，请在偏好中将出牌方式设置为“双击出牌”。\n根据某昨P的键盘操作修改\nA/X=确认，B/⭕=取消"
+}

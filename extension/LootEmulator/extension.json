@@ -1,0 +1,9 @@
+{
+  "id": "LootEmulator",
+  "version": "1.0.0",
+  "name": "抽卡模拟器",
+  "author": "88826",
+  "description": "将抽卡改为本地模拟，不上传数据。\n概率来自官方公布，不代表服务器实际概率。可以自行修改js内概率",
+  "preview": "preview.jpg",
+  "entry": "script.js"
+}

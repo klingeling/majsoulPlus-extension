@@ -1,0 +1,9 @@
+{
+  "id":"fulu",
+  "version":"1.0.0",
+  "name": "副露占位提示",
+  "author": "8q,AnriMachishiro（修复）",
+  "preview": "preview.jpg",
+  "description": "不移除被副露的牌，用透明表示",
+  "entry": "fulu.js"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "checkPaipu",
+  "version": "1.0.0",
+  "name": "牌谱不和谐",
+  "author": "Paulzzh",
+  "description": "18倍铳满：200610-50aa82d2-577d-4ac3-b0d9-838f1a1d9ac3",
+  "preview": "preview.png",
+  "entry": "checkPaipu.js",
+  "applyServer": [0,1,2,3]
+}

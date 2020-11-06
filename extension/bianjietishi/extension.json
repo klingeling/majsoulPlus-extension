@@ -1,0 +1,9 @@
+{
+  "id": "bianjietishi",
+  "version": "1.1.0",
+  "name": "强制开启便捷提示",
+  "preview":"preview.jpg",
+  "author": "Handle",
+  "description": "强制在友人房开启便捷提示，这个插件影响了游戏平衡，可能会被封禁，请注意。",
+  "entry": "script.js"
+}
