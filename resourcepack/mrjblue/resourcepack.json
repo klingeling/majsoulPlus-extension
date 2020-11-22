@@ -1,0 +1,18 @@
+{
+  "id": "mrjblue",
+  "version": "1.0.0",
+  "name": "丸雀蓝桌布",
+  "author": "大黄喵",
+  "description": "丸雀蓝桌布",
+  "preview": "preview.jpg",
+
+  "dependencies": {
+    "majsoul_plus": "^2.0.0"
+  },
+  "replace": [
+	{
+      "from": "scene/Assets/Resource/tablecloth/tablecloth_default/Table_Dif.jpg",
+      "to": "Table_Dif.jpg"
+    }
+	  ]
+}

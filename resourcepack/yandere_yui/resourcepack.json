@@ -1,0 +1,41 @@
+{
+  "id": "yandere_yui",
+  "version": "1.0.0",
+  "name": "病娇八木唯",
+  "author": "AnriMachishiro",
+  "description": "前辈，要永远在一起哦~（笑）\n替换八木唯相关立绘、头像、表情、加载图，大厅/好友房游戏壁纸。",
+  "preview": "preview.jpg",
+
+  "dependencies": {
+    "majsoul_plus": "^2.0.0"
+  },
+  "replace": [
+    "extendRes/charactor/bamuwei/bighead.png",
+    "extendRes/charactor/bamuwei/full.png",
+    "extendRes/charactor/bamuwei/half.png",
+    "extendRes/charactor/bamuwei/smallhead.png",
+    "extendRes/charactor/bamuwei/waitingroom.png",
+	"extendRes/charactor/bamuwei_0/bighead.png",
+    "extendRes/charactor/bamuwei_0/full.png",
+    "extendRes/charactor/bamuwei_0/half.png",
+    "extendRes/charactor/bamuwei_0/smallhead.png",
+    "extendRes/charactor/bamuwei_0/waitingroom.png",
+	"extendRes/emo/e200007/0.png",
+	"extendRes/emo/e200007/1.png",
+	"extendRes/emo/e200007/2.png",
+	"extendRes/emo/e200007/3.png",
+	"extendRes/emo/e200007/4.png",
+	"extendRes/emo/e200007/5.png",
+	"extendRes/emo/e200007/6.png",
+	"extendRes/emo/e200007/7.png",
+	"extendRes/emo/e200007/8.png",
+	"extendRes/emo/e200007/9.png",
+	"extendRes/emo/e200007/10.png",
+	"extendRes/emo/e200007/11.png",
+	"extendRes/emo/e200007/12.png",
+	"extendRes/emo/e200007/13.png",
+    "scene/Assets/Resource/lobby/indoor.jpg",
+    "scene/Assets/Resource/lobby/yard.jpg",
+	"newyear_loading/newyear_6.png"
+  ]
+}

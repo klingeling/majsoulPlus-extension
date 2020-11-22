@@ -1,0 +1,31 @@
+{
+  "id": "mjpai_dark",
+  "version": "1.0.1",
+  "name": "黑色牌背（正面白，背面黑）",
+  "author": "小魔",
+  "description": "将默认牌替换为黑色牌背，\n本套牌牌面及背景均由小魔绘制。\n【修复】哈神流风",
+  "preview": "preview.jpg",
+
+  "dependencies": {
+    "majsoul_plus": "^2.0.0"
+  },
+  "replace": [
+    {
+      "from": "res/atlas/chs_t/myres2/mjp/mjp_default/ui.png",
+      "to": "ui.png"
+    },
+    {
+      "from": "chs_t/myres2/mjp/mjp_default/preview.png",
+      "to": "preview.png"
+    },
+	{
+      "from": "scene/Assets/Resource/mjpai/mjp_default/mjp.png",
+      "to": "mjp.png"
+    },
+	{
+      "from": "scene/Assets/Resource/mjpai/mjp_default/hand_ui.png",
+      "to": "hand_ui.png"
+    }
+  ]
+}
+

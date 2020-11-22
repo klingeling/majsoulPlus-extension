@@ -1,0 +1,30 @@
+{
+  "id": "mjpai_sakura2",
+  "version": "2.1.0",
+  "name": "樱花牌背+昭和字体",
+  "author": "大黄喵",
+  "description": "牌面/小魔，牌背/mumu，调色/大黄喵。",
+  "preview": "preview.jpg",
+
+  "dependencies": {
+    "majsoul_plus": "^2.0.0"
+  },
+  "replace": [
+    {
+      "from": "res/atlas/chs_t/myres2/mjp/mjp_default/ui.png",
+      "to": "ui.png"
+    },
+    {
+      "from": "chs_t/myres2/mjp/mjp_default/preview.png",
+      "to": "preview.png"
+    },
+	{
+      "from": "scene/Assets/Resource/mjpai/mjp_default/mjp.png",
+      "to": "mjp.png"
+    },
+	{
+      "from": "scene/Assets/Resource/mjpai/mjp_default/hand_ui.png",
+      "to": "hand_ui.png"
+    }
+	  ]
+}

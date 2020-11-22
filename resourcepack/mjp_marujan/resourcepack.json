@@ -1,0 +1,39 @@
+{
+  "id": "mjp_marujan",
+  "version": "1.1.0",
+  "name": "真实麻将——大玲珑",
+  "author": "大黄喵",
+  "description": "大洋化学大玲珑牌同款牌面。适用于国服、日服。牌面及牌背素材魔改自Maru-Jan、天凤。",
+  "preview": "preview.jpg",
+
+  "dependencies": {
+    "majsoul_plus": "^2.0.0"
+  },
+  "replace": [
+    {
+      "from": "res/atlas/myres2/mjp/mjp_default/ui.png",
+      "to": "ui.png"
+    },
+    {
+      "from": "myres2/mjp/mjp_default/preview.png",
+      "to": "preview.png"
+    },
+	{
+      "from": "scene/Assets/Resource/mjpai/mjp_default/mjp.png",
+      "to": "mjp.png"
+    },
+	{
+      "from": "scene/Assets/Resource/mjpai/mjp_default/hand_ui.png",
+      "to": "hand_ui.png"
+    },
+	{
+      "from": "res/atlas/jp/myres2/mjp/mjp_default/ui.png",
+      "to": "ui.png"
+    },
+    {
+      "from": "jp/myres2/mjp/mjp_default/preview.png",
+      "to": "preview.png"
+    }
+  ]
+}
+

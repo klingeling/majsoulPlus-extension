@@ -1,0 +1,13 @@
+{
+  "id": "Majsoul_Event_API_launcher",
+  "version": "1.0.0",
+  "name": "雀魂附加事件",
+  "author": "某昨P",
+  "preview": "preview.jpg",
+  "entry": [
+    "lib/EventEmitter.js",
+    "src/uiscript/config.js",
+    "src/manager.js",
+    "src/launch.js"
+  ]
+}

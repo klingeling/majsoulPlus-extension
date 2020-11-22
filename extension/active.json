@@ -4,13 +4,15 @@
   "MajsoulPopWindow",
   "contextMenu",
   "gamepadInput",
-  "keyboardInput",
   "pais_sound",
   "paulzzh_plugin_zjdc",
   "bianjietishi",
   "checkPaipu",
-  "helper",
   "there_is_no_male",
   "FriendsRoom_AllOpen",
-  "fulu"
+  "fulu",
+  "shimingRenzheng",
+  "helper",
+  "KeyboardControls",
+  "MajsoulHelper"
 ]

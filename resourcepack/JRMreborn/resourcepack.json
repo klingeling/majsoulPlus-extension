@@ -1,0 +1,39 @@
+{
+  "id": "JRMreborn",
+  "version": "1.0.3",
+  "name": "雀龙门音效包",
+  "author": "Altivias",
+  "description": "将落牌、副露和报番等音效改为经典雀龙门音效",
+  "preview": "preview.jpg",
+
+  "dependencies": {
+    "majsoul_plus": "^2.0.0"
+  },
+  "replace": [
+	"audio/audio_mj/btn_appear.mp3",
+	"audio/audio_mj/btn_cancel.mp3",
+	"audio/audio_mj/click_pai.mp3",
+	"audio/audio_mj/countdown5.mp3",
+	"audio/audio_mj/cutin.mp3",
+	"audio/audio_mj/discard_tile.mp3",
+	"audio/audio_mj/fu_appear.mp3",
+	"audio/audio_mj/fulu.mp3",
+	"audio/audio_mj/gang.mp3",
+	"audio/audio_mj/hule_fan_out.mp3",
+	"audio/audio_mj/hule_point1.mp3",
+	"audio/audio_mj/hupai.mp3",
+	"audio/audio_mj/new_dora.mp3",
+	"audio/audio_mj/newround_pais.mp3",
+	"audio/audio_mj/put_liqi.mp3",
+	"audio/audio_mj/queshi_down.mp3",
+	"audio/audio_mj/rank1.mp3",
+	"audio/audio_mj/rank234.mp3",
+	"audio/audio_mj/rankchange.mp3",
+	"audio/audio_mj/score_appear.mp3",
+	"audio/audio_mj/score_change.mp3",
+	"audio/audio_mj/showtile.mp3",
+	"audio/audio_mj/winlose.mp3",
+	"audio/audio_mj/zimo.mp3"
+  ]
+}
+

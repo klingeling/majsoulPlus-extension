@@ -1,0 +1,24 @@
+{
+  "id": "danai",
+  "version": "1.0.0",
+  "name": "二阶堂去和谐",
+  "author": "Handle,AnriMachishiro（修复）",
+  "description": "去除多余布料。",
+  "preview": "preview.jpg",
+
+  "dependencies": {
+    "majsoul_plus": "^2.0.0"
+  },
+  "replace": [
+    "extendRes/charactor/erjietang/bighead.png",
+    "extendRes/charactor/erjietang/full.png",
+    "extendRes/charactor/erjietang/half.png",
+    "extendRes/charactor/erjietang/smallhead.png",
+    "extendRes/charactor/erjietang/waitingroom.png",
+	"extendRes/charactor/erjietang/reverse/bighead.png",
+    "extendRes/charactor/erjietang/reverse/full.png",
+    "extendRes/charactor/erjietang/reverse/half.png",
+    "extendRes/charactor/erjietang/reverse/smallhead.png",
+    "extendRes/charactor/erjietang/reverse/waitingroom.png"
+  ]
+}
