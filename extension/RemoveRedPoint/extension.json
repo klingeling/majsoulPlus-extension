@@ -1,0 +1,9 @@
+{
+  "id": "RemoveRedPoint",
+  "version": "1.0.0",
+  "name": "去除设置红点",
+  "author": ["88826"],
+  "preview": "preview.png",
+  "description": "强迫症福利，把右上角烦人的红点删了",
+  "entry": "script.js"
+}

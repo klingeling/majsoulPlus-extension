@@ -1,6 +1,6 @@
 {
   "id": "layaContextMenu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "游戏内快捷菜单",
   "author": ["bin"],
   "description": "使用layaAPI实现的简易游戏内快捷插件菜单窗口,请不要将设置悬浮球移出屏外",

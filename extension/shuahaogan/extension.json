@@ -1,0 +1,13 @@
+{
+  "id": "shuahaogan",
+  "version": "1.0.1",
+  "name": "自动三银东挂机随机出牌",
+  "author": ["88826"],
+  "preview": "preview.jpg",
+  "dir": "assets",
+  "description": "刷好感度用，请勿在挂机中随意操作以免出现bug。\r开始按钮在大厅照相机下面。",
+  "resourcepack": [
+    "auto.png"
+  ],
+  "entry": "script.js"
+}

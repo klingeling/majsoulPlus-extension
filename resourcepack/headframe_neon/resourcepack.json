@@ -1,9 +1,9 @@
 {
   "id": "headframe_neon",
   "version": "1.0.0",
-  "name": "头像框——霓虹",
-  "author": "大黄喵",
-  "description": "将默认头像框改为Steam霓虹头像框。",
+  "name": "头像框-樱花之恋",
+  "author": "熊小萌",
+  "description": "将默认头像框改为樱花之恋头像框，快来和心仪的ta来一场甜甜的恋爱吧！",
   "preview": "preview.jpg",
 
   "dependencies": {

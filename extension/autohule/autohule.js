@@ -1,7 +1,8 @@
 !function(){
     const inject = function() {
-        if (typeof view !== "undefined" && view.DesktopMgr.Inst) {
+        if (uiscript.UI_PlayerInfo.Inst && uiscript.UI_OtherPlayerInfo.Inst && uiscript.UI_PlayerInfo.Inst.show && uiscript.UI_OtherPlayerInfo.Inst.show && uiscript.UI_PlayerInfo.Inst.detail_data.blocks[0].show && uiscript.UI_OtherPlayerInfo.Inst.detail_data.blocks[0].show && view.ActionHule.play) {
             console.log("Majsoul Helper injected.");
+            uiscript.UI_InfoLite.Inst.show("在此敬告您\n您已经开启了挂机脚本\n请确定您是否需要本脚本\n如果不需要请在雀魂P内关闭");
             for (const key in view.DesktopMgr.Inst.actionMap) {
                 const action = view.DesktopMgr.Inst.actionMap[key];
                 const m = action.method;

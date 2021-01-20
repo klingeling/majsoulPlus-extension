@@ -1,9 +1,9 @@
 {
   "id": "autohule",
   "version": "2.0.0",
-  "name": "自动和了",
-  "author": "Ethan",
-  "description": "对局开始时默认开启自动和了",
+  "name": "挂机脚本",
+  "author": "一坨开发者",
+  "description": "对局开始时默认开启模切关闭鸣牌",
   "preview": "preview.jpg",
   "entry": "autohule.js",
   "applyServer": [0]
