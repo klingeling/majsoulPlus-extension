@@ -1,0 +1,9 @@
+{
+  "id": "No_shengzhimo",
+  "name": "妄别打啦",
+  "author": "Handle，哈神流风（修改）",
+  "description": "将牌桌上（包括自己）的妄全部替换成一姬",
+  "preview": "preview.png",
+  "entry": "script.js"
+  
+}

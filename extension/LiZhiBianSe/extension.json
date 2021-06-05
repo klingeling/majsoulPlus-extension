@@ -1,0 +1,11 @@
+{
+  "id": "LiZhiBianSe",
+  "version": "1.0.1",
+  "name": "立直变色",
+  "author": ["bin"],
+  "description": "立直变色",
+  "preview": "preview.png",
+  "dependencies": {},
+  "resourcepack": [],
+  "entry": "script.js"
+}

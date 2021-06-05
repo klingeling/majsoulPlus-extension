@@ -10,7 +10,7 @@ requestAnimationFrame(function autoRun() {
       if (soundID == 1) {
         const changeMap = {
 		  "终局一位语音": {
-           "words": '大家全都安睡吧'
+           "words": '大家全都安睡吧。'
           },
           "获得语音": {
             "words": '太好了,还好Master没有忘记希儿。',
@@ -62,6 +62,27 @@ requestAnimationFrame(function autoRun() {
           },
           "好感度升级语音4": {
             "words": 'Master的手，暖暖的。'
+          },
+          "好感度升级语音5": {
+            "words": '（待补）'
+          },
+          "契约语音": {
+            "words": '（待补）'
+          },
+          "特殊语音 - 连续打出多张相同牌": {
+            "words": '（待补）'
+          },
+          "特殊语音 - 打出宝牌": {
+            "words": '（待补）'
+          },
+          "特殊语音 - 余牌少于10": {
+            "words": '（待补）'
+          },
+          "特殊语音 - 役满听牌": {
+            "words": '（待补）'
+          },
+          "特殊语音 - 倍满/三倍满听牌": {
+            "words": '（待补）'
           }
         };
         soundGroup.forEach(soundObject => {
@@ -99,22 +120,3 @@ requestAnimationFrame(function autoRun() {
     raf = requestAnimationFrame(autoRun);
   }
 });
-(function () {
-  console.log("加入开局语音及胡牌语音");
-  const oldNewRoundplay = view.ActionNewRound.play;
-  view.ActionNewRound.play = function (e) {
-    if (view.DesktopMgr.Inst["player_datas"][view.DesktopMgr.Inst["seat"]]["character"]["charid"] === 200001)
-      Laya.SoundManager.playSound("sound/game_start_200001.mp3", 1, {
-        run: () => {}
-      });
-    return oldNewRoundplay.call(this, e)
-  }
-  const oldmehule = view.ViewPlayer_Me.prototype.HulePrepare;
-  view.ViewPlayer_Me.prototype.HulePrepare = function (e, i, n) {
-    if (view.DesktopMgr.Inst["current_step"] > 0 && view.DesktopMgr.Inst["player_datas"][view.DesktopMgr.Inst["seat"]]["character"]["charid"] === 200001)
-      Laya.SoundManager.playSound("sound/hupai_200001.mp3", 1, {
-        run: () => {}
-      });
-    return oldmehule.call(this, e, i, n)
-  }
-})();

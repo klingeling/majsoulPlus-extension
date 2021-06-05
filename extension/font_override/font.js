@@ -19,7 +19,7 @@
   };
   let css = '';
   for (let [name, info] of Object.entries(fontMap)) {
-    css += `@font-face{\n\tfont-family:"${name}";\n\tsrc:${info.src};\n\t${info.bold ? 'font-weight:bold;\n' : ''}}\n`
+    css += `@font-face{font-family:"${name}";src:${info.src};${info.bold ? 'font-weight:bold;' : ''}}\n`
   }
   const style = document.createElement('style');
   style.id = '8q_font_override';
@@ -28,8 +28,9 @@
 
   const registerBitmapFont = Laya.Text.registerBitmapFont;
   Laya.Text.registerBitmapFont = function (name, font) {
-    if (fontMap.hasOwnProperty(name)) {
-      font.destroy();
+    console.log(name, font)
+    if (font !== undefined && fontMap.hasOwnProperty(name)) {
+      // font.destroy(); // 直接不销毁了,我相信1202年的电脑配置不会那么差
       font.fontName_8q = name === 'hanyi' ? 'hanyi,haolong' : name; // 汉仪字体缺字，用今昔豪龙补一下
     } else {
       console.log('缺少字体定义:', font, name);

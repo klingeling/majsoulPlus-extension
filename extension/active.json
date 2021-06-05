@@ -14,5 +14,7 @@
   "keyboardInput",
   "contextMenu",
   "MajsoulPopWindow",
+  "deselect2select",
+  "AntiAfk",
   "pais_sound"
 ]
