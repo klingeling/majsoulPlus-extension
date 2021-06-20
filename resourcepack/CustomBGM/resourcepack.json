@@ -1,6 +1,6 @@
 {
   "id": "CustomBGM",
-  "version": "5.0.0",
+  "version": "5.0.5",
   "name": "BGM Replace",
   "author": "Tachibana",
   "description": "BGM Replace",
@@ -15,6 +15,8 @@
     "audio/music/liqi2.mp3",
     "audio/music/lobby.mp3",
     "audio/music/zhongxialvdong.mp3",
+    "audio/music/lobby_autumn.mp3",
+    "audio/music/lobby_winter.mp3",
     "audio/music/yichujifa.mp3"
   ]
 }
