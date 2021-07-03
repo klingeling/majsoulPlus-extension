@@ -1,7 +1,9 @@
-let isUseOriginEmoji = undefined; //当此项为true时，对局内的表情将会是原角色的表情，而非wqdy更换过后的。默认关闭。
-let isSexSort = undefined; //当此项为true时，宿舍内的角色将会以性别排序而非纯数组排序。默认关闭。
+let isUseOriginEmoji = undefined;
+let isSexSort = undefined;
 if (game) {
     const args = {};
+    const redbull_item_id = ["305501", "309018"];
+    const current_version = "v0.9.184.w";
     class WQDY {
         constructor() {
             this.readSetting();
@@ -51,15 +53,29 @@ if (game) {
                     console.log("Failed to load Star Chars,Error Message: " + e);
                 }
             };
-			if (localStorage.getItem("characters") && localStorage.getItem("characters") != "[]" && localStorage.getItem("characters") != "{}") {
+            if (localStorage.getItem("characters") && localStorage.getItem("characters") != "[]" && localStorage.getItem("characters") != "{}") {
                 try {
                     args.characters = JSON.parse(localStorage.getItem("characters"));
                 } catch (e) {
                     console.log("Failed to load Characters,Error Message: " + e);
                 }
             };
-            args.isUseOriginEmoji = isUseOriginEmoji ? isUseOriginEmoji : localStorage.getItem("isUseOriginEmoji");
-            args.isSexSort = isSexSort ? isSexSort : localStorage.getItem("isSexSort");
+            args.isUseOriginEmoji = false;
+            if (localStorage.getItem("isUseOriginEmoji")) {
+                try {
+                    args.isUseOriginEmoji = isUseOriginEmoji ? isUseOriginEmoji : JSON.parse(localStorage.getItem("isUseOriginEmoji"));
+                } catch (e) {
+                    console.log("Failed to load isUseOriginEmoji,Error Message: " + e);
+                }
+            }
+            args.isSexSort = false;
+            if (localStorage.getItem("isSexSort")) {
+                try {
+                    args.isSexSort = isSexSort ? isSexSort : JSON.parse(localStorage.getItem("isSexSort"));
+                } catch (e) {
+                    console.log("Failed to load isSexSort,Error Message: " + e);
+                }
+            }
         }
         writeSetting() {
             let char_id = cfg.item_definition.skin.map_[GameMgr.Inst.account_data.avatar_id].character_id;
@@ -71,7 +87,7 @@ if (game) {
             localStorage.setItem("view_index", uiscript.UI_Sushe.using_commonview_index);
             localStorage.setItem("finished_endings", JSON.stringify(uiscript.UI_Sushe.finished_endings_map));
             localStorage.setItem("star_chars", JSON.stringify(uiscript.UI_Sushe.star_chars));
-			localStorage.setItem("characters", JSON.stringify(uiscript.UI_Sushe.characters));
+            localStorage.setItem("characters", JSON.stringify(uiscript.UI_Sushe.characters));
             localStorage.setItem("isUseOriginEmoji", args.isUseOriginEmoji);
             localStorage.setItem("isSexSort", args.isSexSort);
             console.log("wqdy角色配置保存成功")
@@ -115,12 +131,16 @@ if (game) {
                 this._item_map = {};
                 var items = cfg.item_definition.item.map_;
                 for (var id in items) {
-                    if (items[id].category != 1 && items[id].category != 2 || items[id].category == 6 && items[id].is_unique == 1) //过滤一次性道具、礼物、活动物品
-                        this._item_map[id] = {
-                            item_id: id,
-                            count: 1,
-                            category: items[id].category
-                        }
+                    if (!redbull_item_id.includes(id)) { //不该有的东西
+                        if (items[id].category != 1 && items[id].category != 2 && items[id].category != 6 || items[id].category == 6 && items[id].is_unique == 1) //过滤一次性道具、礼物、活动物品
+                            this._item_map[id] = {
+                                item_id: id,
+                                count: 1,
+                                category: items[id].category
+                            }
+                    } else {
+                        console.log("removed " + id)
+                    }
                 }
                 app.NetAgent.sendReq2Lobby("Lobby", "fetchBagInfo", {}, (i, n) => {
                     if (i || n.error)
@@ -133,6 +153,13 @@ if (game) {
                                 count: item.stack,
                                 category: items[item.item_id].category
                             })
+                        /*
+                        uiscript.UI_Bag._item_map[309036] = {
+                        item_id: 309036,
+                        count: 99,
+                        category: items[309036].category
+                        }
+                         */
                     }
                 })
             }
@@ -194,10 +221,15 @@ if (game) {
                         extra_emoji: cfg.character.emoji.groups_[v.id] ? cfg.character.emoji.groups_[v.id].map(v => v.sub_id) : []
                     }
                 });
-				if (args.characters != undefined) {
-					i.characters = args.characters;
-				}
+                if (args.characters != undefined) {
+                    for (var j = 0; j < i.characters.length; j++)
+                        for (var k = 0; k < args.characters.length; k++)
+                            if (i.characters[j].charid == args.characters[k].charid) {
+                                i.characters[j].skin = args.characters[k].skin;
+                            }
+                }
                 if (args.isSexSort) {
+                    console.log(args.isSexSort);
                     for (var j = i.characters.length - 1; j >= 0; j--) {
                         if (cfg.item_definition.character.map_[i.characters[j].charid].sex == 1) {
                             for (var k = j - 1; k >= 0; k--) {
@@ -309,7 +341,7 @@ if (game) {
                 uiscript.UI_Sushe.characters[this._select_index].skin = t,
                 this.change_select(this._select_index),
                 uiscript.UI_Sushe.characters[this._select_index].charid == uiscript.UI_Sushe.main_character_id && (GameMgr.Inst.account_data.avatar_id = t),
-				window.wqdy.writeSetting();
+                window.wqdy.writeSetting();
             }
             //刷新当前皮肤(防止刷新皮肤)(新版本不需要锁定皮肤)
             const refreshInfo = uiscript.UI_Lobby.prototype.refreshInfo;
@@ -510,8 +542,9 @@ if (game) {
                                     break;
                                 }
                         GameMgr.Inst.account_data.avatar_id = this.choosed_skin_id;
-                        if (uiscript.UI_WaitingRoom && uiscript.UI_WaitingRoom.Inst && uiscript.UI_WaitingRoom.Inst.refreshAsOwner) {
-                            uiscript.UI_WaitingRoom.Inst.refreshAsOwner()
+                        if (uiscript.UI_WaitingRoom && uiscript.UI_WaitingRoom.Inst && uiscript.UI_WaitingRoom.Inst._refreshPlayerInfo) {
+                            for (var t = 0, e = 0; e < uiscript.UI_WaitingRoom.Inst.players.length; e++)
+                                0 != uiscript.UI_WaitingRoom.Inst.players[e].category && (uiscript.UI_WaitingRoom.Inst._refreshPlayerInfo(uiscript.UI_WaitingRoom.Inst.players[e]), t++);
                         }
                         uiscript.UIBase.anim_alpha_out(this.me, {
                             x: 0
@@ -528,8 +561,7 @@ if (game) {
                 }
                 return initRoom.call(this);
             }
-            const DoMJAction = uiscript.UI_DesktopInfo.prototype.DoMJAction; //在表情加载好后，将语音换回原人物
-            uiscript.UI_DesktopInfo.prototype.DoMJAction = function (a, b) {
+            const changeCharacter = function () {
                 if (args.isUseOriginEmoji) {
                     for (var i = 0; i < view.DesktopMgr.Inst.player_datas.length; i++) {
                         if (view.DesktopMgr.Inst.player_datas[i].account_id == GameMgr.Inst.account_id) {
@@ -537,7 +569,16 @@ if (game) {
                         }
                     }
                 }
-                return DoMJAction.call(this, a, b);
+            }
+            const shout = uiscript.UI_DesktopInfo.prototype.shout; //在表情加载好后，将语音换回原人物
+            uiscript.UI_DesktopInfo.prototype.shout = function (a, b, c) {
+                changeCharacter();
+                return shout.call(this, a, b, c);
+            }
+            const playMindVoice = view.DesktopMgr.prototype.playMindVoice;
+            view.DesktopMgr.prototype.playMindVoice = function () {
+                changeCharacter();
+                return playMindVoice.call(this);
             }
             uiscript.UI_DesktopInfo.prototype.onShowEmo = function (t, e) { //确保发送的表情显示正常
                 var i = this._player_infos[t];
@@ -550,27 +591,62 @@ if (game) {
                     view.DesktopMgr.Inst.player_datas[view.DesktopMgr.Inst.localPosition2Seat(t)].character.charid = uiscript.UI_Sushe.main_character_id;
                 }
             }
+            const init = uiscript.UI_Achievement.init;
+            uiscript.UI_Achievement.init = function (t) {
+                cfg.achievement.achievement.forEach(function (achievement) {
+                    if (achievement.deprecated) {
+                        //console.log(achievement)
+                    }
+                    achievement.locked = 0;
+                })
+                init.call(this, t);
+            }
         }
     }
 
-    if (!window.wqdy) {
-        window.wqdy = new WQDY();
-        window.wqdy.readSetting();
-        Majsoul_Plus["wqdy"] = {
-            name: "我全都要",
-            actions: {
-                "手动保存配置": () => window.wqdy.writeSetting(),
-                "切换表情显示": () => {
-                    args.isUseOriginEmoji = !args.isUseOriginEmoji;
-                    localStorage.setItem("isUseOriginEmoji", args.isUseOriginEmoji);
-                },
-                "按性别排序角色": () => {
-                    args.isSexSort = !args.isSexSort;
-                    localStorage.setItem("isSexSort", isSexSort);
+    function isCurrentVersion(ver) {
+        var scripts = document.getElementsByTagName("script");
+        for (i = 0; i < scripts.length; i++) {
+            if (scripts[i].outerHTML.includes("code.js")) {
+                if (scripts[i].outerHTML.includes(ver)) {
+                    return 1;
+                } else {
+                    return 0;
                 }
             }
         }
-        console.log("我全都要 加载完毕");
+        return -1;
+    }
+
+    if (!window.wqdy) {
+        var versionStatus = isCurrentVersion(current_version);
+        if (versionStatus === 1) {
+            window.wqdy = new WQDY();
+            window.wqdy.readSetting();
+            Majsoul_Plus["wqdy"] = {
+                name: "我全都要",
+                actions: {
+                    "手动保存配置": () => window.wqdy.writeSetting(),
+                    "切换表情显示": () => {
+                        args.isUseOriginEmoji = !args.isUseOriginEmoji;
+                        localStorage.setItem("isUseOriginEmoji", args.isUseOriginEmoji);
+                        return "应用成功，下一局游戏生效。"
+                    },
+                    "按性别排序角色": () => {
+                        args.isSexSort = !args.isSexSort;
+                        localStorage.setItem("isSexSort", args.isSexSort);
+                        return "应用成功，重新启动游戏后生效。"
+                    }
+                }
+            }
+            console.log("我全都要 加载完毕");
+        } else if (versionStatus === 0) {
+            alert("[我全都要]\n当前code.js版本与更新时版本号不同，建议直到更新为止暂停使用。");
+        } else if (versionStatus === -1) {
+            alert("[我全都要]\n未检测到code.js，建议暂停使用并回报作者。");
+        } else {
+            alert("[我全都要]\ncode.js因不明原因检测失败，建议暂停使用并回报作者。");
+        }
     } else {
         console.warn("")
     }
